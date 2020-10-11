@@ -9,4 +9,6 @@ mkdir ~/esp
 cd ~/esp
 git clone -b v4.1 --recursive https://github.com/espressif/esp-idf.git
 cd ~/esp/esp-idf
+
+echo -e "\n## Installing tools"
 ./install.sh > ~/esp-idf-install.log 2>&1
