@@ -1,0 +1,3 @@
+# ignore auxiliary files and directories
+*.code-workspace
+/notes/

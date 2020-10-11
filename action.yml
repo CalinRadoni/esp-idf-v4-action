@@ -1,0 +1,14 @@
+name: 'ESP32 firmware builder with ESP-IDF v4.1'
+description: 'GitHub Action to build your ESP32 firmware with ESP-IDF development framework v4.1'
+inputs:
+  src-directory:
+    description: 'The directory with source code'
+    required: true
+    default: '.'
+runs:
+  using: "composite"
+  steps:
+    - run: ${{ github.action_path }}/prepare.sh
+      shell: bash
+    - run: ${{ github.action_path }}/build.sh ${{ inputs.src-directory }}
+      shell: bash
