@@ -1,5 +1,5 @@
-name: 'ESP32 firmware builder with ESP-IDF v4.1'
-description: 'GitHub Action to build your ESP32 firmware with ESP-IDF development framework v4.1'
+name: 'ESP32 builder with ESP-IDF v4.1'
+description: 'GitHub Action to build your ESP32 code with Espressif's IoT Development Framework v4.1'
 inputs:
   src-directory:
     description: 'The directory with source code'
