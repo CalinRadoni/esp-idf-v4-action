@@ -1,14 +1,22 @@
-name: 'ESP32 builder with ESP-IDF v4.1'
-description: 'GitHub Action to build your ESP32 code with Espressif IoT Development Framework v4.1'
+name: 'ESP32 build - ESP-IDF v4'
+description: 'GitHub Action to build your ESP32 code with Espressif IoT Development Framework v4.x'
 inputs:
-  src-directory:
+  esp_idf_version:
+    description: 'Required ESP-IDF version (v4.1, release/v4.2, ...)'
+    required: false
+    default: 'v4.1'
+  src_directory:
     description: 'The directory with source code'
-    required: true
+    required: false
     default: '.'
+  idf_reconfigure:
+    description: 'Run the `idf.py reconfigure` command'
+    required: false
+    default: 'true'
 runs:
   using: "composite"
   steps:
     - run: ${{ github.action_path }}/prepare.sh
       shell: bash
-    - run: ${{ github.action_path }}/build.sh ${{ inputs.src-directory }}
+    - run: ${{ github.action_path }}/build.sh
       shell: bash
