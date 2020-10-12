@@ -1,6 +1,6 @@
 #!/bin/bash
 
-esp_idf_version=${INPUT_ESP_IDF_VERSION:-v4.1}
+esp_idf_version="$1"
 
 echo -e "\n## Installing prerequisites"
 

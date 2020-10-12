@@ -2,17 +2,11 @@
 
 source ~/esp/esp-idf/export.sh
 
-src_directory=${INPUT_SRC_DIRECTORY:-.}
-idf_reconfigure=${INPUT_IDF_RECONFIGURE:-true}
-
-echo $INPUT_SRC_DIRECTORY
-echo $src_directory
-pwd
-ls -al
+esp_idf_version="$1"
+src_directory="$2"
+idf_reconfigure="$3"
 
 cd "$src_directory"
-pwd
-ls -al
 
 if [[ "$idf_reconfigure" == "true" ]]; then
   echo -e "\n\n## Reconfigure the project"
