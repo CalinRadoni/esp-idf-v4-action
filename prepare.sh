@@ -4,7 +4,7 @@ esp_idf_version=${INPUT_ESP_IDF_VERSION:-v4.1}
 
 echo -e "\n## Installing prerequisites"
 
-DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata
 
 case $esp_idf_version in
   latest | v4.2 | v4.2.* | release-v4.2)
@@ -14,7 +14,7 @@ case $esp_idf_version in
     sudo apt-get install -y git wget flex bison gperf python3 python3-pip python3-setuptools python-is-python3 python3-libusb1 cmake ninja-build ccache libffi-dev libssl-dev
     ;;
   v4.0.* | release/v4.0)
-    apt-get install -y git wget libncurses-dev flex bison gperf python3 python3-pip python3-setuptools python-is-python3 python3-libusb1 cmake ninja-build ccache libffi-dev libssl-dev
+    sudo apt-get install -y git wget libncurses-dev flex bison gperf python3 python3-pip python3-setuptools python-is-python3 python3-libusb1 cmake ninja-build ccache libffi-dev libssl-dev
     ;;
   *)
     echo "Unimplemented ESP-IDF version !"
