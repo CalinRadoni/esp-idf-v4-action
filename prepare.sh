@@ -24,7 +24,16 @@ esac
 
 mkdir ~/esp
 cd ~/esp
-git clone -b $esp_idf_version --recursive https://github.com/espressif/esp-idf.git
+
+case $esp_idf_version in
+  latest)
+    git clone --recursive https://github.com/espressif/esp-idf.git
+    ;;
+  *)
+    git clone -b $esp_idf_version --recursive https://github.com/espressif/esp-idf.git
+    ;;
+esac
+
 cd ~/esp/esp-idf
 
 echo -e "\n## Installing tools"
