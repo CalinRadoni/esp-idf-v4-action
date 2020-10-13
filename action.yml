@@ -22,7 +22,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: ${{ github.action_path }}/prepare.sh ${{ inputs.esp_idf_version }}
+    - run: ${{ github.action_path }}/install.sh ${{ inputs.esp_idf_version }}
       shell: bash
     - run: ${{ github.action_path }}/build.sh ${{ inputs.esp_idf_version }} ${{ inputs.src_directory }} ${{ inputs.idf_reconfigure }}
       shell: bash
