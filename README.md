@@ -2,6 +2,9 @@
 
 GitHub Action to install Espressif IoT Development Framework v4.x for building ESP32 code.
 
+**Note:** [ESP-IDF v4.x build](https://github.com/marketplace/actions/esp-idf-v4-x-build) is faster to use as a GitHub Action for
+building ESP32 code. It uses Espressif's official Docker container skipping the whole installation part.
+
 The usable ESP-IDF versions are:
 
 - `latest` (based on release/v4.2)
