@@ -7,7 +7,10 @@ echo -e "\n## Installing prerequisites"
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata
 
 case $esp_idf_version in
-  latest | v4.2 | v4.2.* | release/v4.2)
+  v4.4 | v4.4.* | release/v4.4)
+    sudo apt-get install -y git wget flex bison gperf python3 python3-pip python3-setuptools python-is-python3 python3-libusb1 cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0
+    ;;
+  v4.2 | v4.2.* | release/v4.2)
     sudo apt-get install -y git wget flex bison gperf python3 python3-pip python3-setuptools python-is-python3 python3-libusb1 cmake ninja-build ccache libffi-dev libssl-dev dfu-util
     ;;
   v4.1 | v4.1.* | release/v4.1)
